@@ -1,16 +1,8 @@
-// Fetch data from DOM
-
-const playerSelects = document.querySelectorAll('input');
-const result = document.querySelector('.result');
-const playerscore = document.querySelector('.playerscore');
-const computerscore = document.querySelector('.computerscore');
-const button = document.querySelector('button');
-
-// Handle Computer play by returning rock, paper or scissors at random
+//#1. Handles Computer play by returning rock, paper or scissors at random.
 
 function computerPlay() {
-    let m = 1, n = 4;
-    switch (Math.floor(Math.random() * (n - m) + m)) {
+    const computer = Math.floor(Math.random() * (4 - 1) + 1)
+    switch (computer) {
         case 1:
             return `Rock`
         case 2:
@@ -20,11 +12,7 @@ function computerPlay() {
     } ;
 };
 
-// Plays one round of the game
-
-const gameSession = (e) => { playRound(e, computerPlay()) };
-
-// Defines game play rules
+//#2. Defines game play rules.
 
 function playRound(playerBtn, computerSelect) {
     const playerSelect = playerBtn.target.value;
@@ -32,27 +20,27 @@ function playRound(playerBtn, computerSelect) {
     switch (true) {
         case (playerSelect === "Rock" && computerSelect === 'Scissors'):
             result.textContent = `You Win! Rock crushes Scissors`;
-            playerscore.textContent = parseInt(playerscore.textContent) + 1;
+            playerscorevalue.textContent = parseInt(playerscorevalue.textContent) + 1;
             break;
         case (playerSelect === "Rock" && computerSelect === 'Paper'):
             result.textContent = `You Lose! Paper beats Rock`;
-            computerscore.textContent = parseInt(computerscore.textContent) + 1;
+            computerscorevalue.textContent = parseInt(computerscorevalue.textContent) + 1;
             break;
         case (playerSelect === "Paper" && computerSelect === 'Rock'):
             result.textContent = `You Win! Paper covers Rock`;
-            playerscore.textContent = parseInt(playerscore.textContent) + 1;
+            playerscorevalue.textContent = parseInt(playerscorevalue.textContent) + 1;
             break;
         case (playerSelect === "Paper" && computerSelect === 'Scissors'):
             result.textContent = `You Lose! Scissors cuts Paper`;
-            computerscore.textContent = parseInt(computerscore.textContent) + 1;
+            computerscorevalue.textContent = parseInt(computerscorevalue.textContent) + 1;
             break;
         case (playerSelect === "Scissors" && computerSelect === 'Paper'):
             result.textContent = `You Win! Scissors cuts Paper`;
-            playerscore.textContent = parseInt(playerscore.textContent) + 1;
+            playerscorevalue.textContent = parseInt(playerscorevalue.textContent) + 1;
             break;
         case (playerSelect === "Scissors" && computerSelect === 'Rock'):
             result.textContent = `You Lose! Scissors can't crush Rock`;
-            computerscore.textContent = parseInt(computerscore.textContent) + 1;
+            computerscorevalue.textContent = parseInt(computerscorevalue.textContent) + 1;
             break;
         default:
             result.textContent = `It's a tie`;
@@ -62,22 +50,27 @@ function playRound(playerBtn, computerSelect) {
     endGame()
 };
 
-// Ends the game session after player or computer scores 5
+//#3. Plays one round of the game.
 
-function endGame() {
-    if (playerscore.textContent === "5" || computerscore.textContent === "5") {
-        playerSelects.forEach(playerSelect => { playerSelect.removeEventListener('click', gameSession) });
-        button.style.display = "inline-block";
-    }
-}
+const gameSession = (e) => { playRound(e, computerPlay()) };
 
-// Adds event listener to handle player selection
+//#4. Adds event listener to handle player selection
 
+const playerSelects = document.querySelectorAll('input');
 playerSelects.forEach(playerSelect => { playerSelect.addEventListener('click', gameSession) });
 
-// Allows game to be restarted after restart button click
+//#5. Ends the game session after player or computer scores 5.
 
-button.addEventListener('click', () => { location.reload() })
+function endGame() {
+    if (playerscorevalue.textContent === "5" || computerscorevalue.textContent === "5") {
+        playerSelects.forEach(playerSelect => { playerSelect.removeEventListener('click', gameSession) });
+        
+        const button = document.createElement('button');
+        button.textContent = `Play Again?`;
+        container.appendChild(button);
+        button.addEventListener('click', () => { location.reload() })
+    }
+}
 
 
 

@@ -49,7 +49,6 @@ h1, p, button {
 }
 
 button {
-    display: none;
     font-family: inherit;
     background-color: inherit;
     color: inherit;
