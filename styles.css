@@ -1,0 +1,59 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: 'Better One';
+    src: url('./resources/EuphoriaScript-Regular.ttf');
+}
+
+body {
+    font-family: 'Better One', cursive;
+    font-size: 20px;
+    color: white;
+    background-image: url(./resources/rockbg2.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    place-content: center center;
+}
+
+h1, p, button {
+    margin: 1rem auto;
+    font-size: 3rem;
+}
+
+.btns {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: center center;
+    margin: 5rem 0 2rem 0;
+}
+
+.btns input {
+    margin: 0 4rem;
+}
+
+.score {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: center space-around;
+}
+
+button {
+    display: none;
+    font-family: inherit;
+    background-color: inherit;
+    color: inherit;
+}
+
+
+
