@@ -1,8 +1,12 @@
+// Fetch data from DOM
+
 const playerSelects = document.querySelectorAll('input');
 const result = document.querySelector('.result');
 const playerscore = document.querySelector('.playerscore');
 const computerscore = document.querySelector('.computerscore');
 const button = document.querySelector('button');
+
+// Handle Computer play by returning rock, paper or scissors at random
 
 function computerPlay() {
     let m = 1, n = 4;
@@ -16,7 +20,11 @@ function computerPlay() {
     } ;
 };
 
+// Plays one round of the game
+
 const gameSession = (e) => { playRound(e, computerPlay()) };
+
+// Defines game play rules
 
 function playRound(playerBtn, computerSelect) {
     const playerSelect = playerBtn.target.value;
@@ -50,14 +58,24 @@ function playRound(playerBtn, computerSelect) {
             result.textContent = `It's a tie`;
             break;
     }
+    
+    endGame()
+};
 
+// Ends the game session after player or computer scores 5
+
+function endGame() {
     if (playerscore.textContent === "5" || computerscore.textContent === "5") {
         playerSelects.forEach(playerSelect => { playerSelect.removeEventListener('click', gameSession) });
         button.style.display = "inline-block";
     }
-};
+}
+
+// Adds event listener to handle player selection
 
 playerSelects.forEach(playerSelect => { playerSelect.addEventListener('click', gameSession) });
+
+// Allows game to be restarted after restart button click
 
 button.addEventListener('click', () => { location.reload() })
 
