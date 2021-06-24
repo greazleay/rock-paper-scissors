@@ -6,4 +6,4 @@
 
 # About Game
 
-Popular Rock, Paper & Scissors game built with HTML/CSS and JS only
+Popular Rock, Paper & Scissors game built mainly with JavaScript and HTML/CSS.
