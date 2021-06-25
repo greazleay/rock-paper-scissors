@@ -1,8 +1,14 @@
+// Body and it's children
+
 const body = document.querySelector('body');
 
 const container = document.createElement('div');
 container.classList.add('container');
 body.appendChild(container);
+
+const script = document.createElement('script');
+script.src = './index.js';
+body.appendChild(script);
 
 // Container: First block
 
