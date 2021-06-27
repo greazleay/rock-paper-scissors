@@ -2,7 +2,7 @@
 
 # Contributors:
 
-* Lekan Adetunmbi
+- Lekan Adetunmbi
 
 # About Game
 

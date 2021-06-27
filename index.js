@@ -1,7 +1,7 @@
 //#1. Handles Computer play by returning rock, paper or scissors at random.
 
 function computerPlay() {
-    const computer = Math.floor(Math.random() * (4 - 1) + 1)
+    const computer = Math.floor((Math.random() * 3) + 1)
     switch (computer) {
         case 1:
             return `Rock`
