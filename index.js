@@ -64,7 +64,19 @@ playerSelects.forEach(playerSelect => { playerSelect.addEventListener('click', g
 function endGame() {
     if (playerscorevalue.textContent === "5" || computerscorevalue.textContent === "5") {
         playerSelects.forEach(playerSelect => { playerSelect.removeEventListener('click', gameSession) });
-        
+
+        const winner = document.createElement('p')
+        container.appendChild(winner)
+        switch (true) {
+            case playerscorevalue.textContent === '5':
+                winner.textContent = "You Won the game :) standing ovation for you!!!";
+                winner.style.color = 'yellow';
+                break;
+            case computerscorevalue.textContent === '5':
+                winner.textContent = "You lost the game, better luck next time";
+                winner.style.color = 'red';
+                break;
+        }
         const button = document.createElement('button');
         button.textContent = `Play Again?`;
         container.appendChild(button);

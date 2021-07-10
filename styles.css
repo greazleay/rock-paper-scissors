@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-size: 17px;
 }
 
 *, *::before, *::after {
@@ -13,10 +14,10 @@ html {
 
 body {
     font-family: 'Better One', cursive;
-    font-size: 20px;
     color: white;
-    background-image: url(./resources/rockbg2.jpg);
-    background-size: cover;
+    /* background-image: url(./resources/rockbg2.jpg);
+    background-size: cover; */
+    background-color: #398C4B;
     text-align: center;
 }
 
@@ -52,6 +53,8 @@ button {
     font-family: inherit;
     background-color: inherit;
     color: inherit;
+    border-radius: 5rem;
+    border: 2px solid;
 }
 
 

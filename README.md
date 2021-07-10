@@ -1,11 +1,12 @@
 # Rock, Paper and Scissors
 
-# Contributors:
+### About Game
 
-- Lekan Adetunmbi
+Popular [Rock, Paper & Scissors](https://en.wikipedia.org/wiki/Rock_paper_scissors) game built mainly with JavaScript and HTML/CSS.
 
-# About Game
+From [the Odin Project](https://theodinproject.com) Curriculum.
 
-Popular Rock, Paper & Scissors game built mainly with JavaScript and HTML/CSS.
+### Contributors:
 
-From the Odin Project Curriculum
+* Lekan Adetunmbi
+
